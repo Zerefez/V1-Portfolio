@@ -11,6 +11,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'optimum-grey': '#7f7e7c',
       },
     },
   },
