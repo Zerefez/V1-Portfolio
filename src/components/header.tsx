@@ -31,7 +31,7 @@ export default function Header() {
     <header className="z-[999] relative font-[family-name:var(--font-space-mono)]">
       {/* Floating navbar: Always visible on desktop, toggle on mobile */}
       <div
-        className={`fixed z-[999] w-full bg-white/30 backdrop-blur-lg dark:bg-neutral-800/30 transition-all duration-300 ${
+        className={`fixed z-[999] bg-white/30 backdrop-blur-lg dark:bg-optimum-grey/30 transition-all duration-300 ${
           isMobile
             ? "bottom-[80px] right-12 w-[150px] p-2 rounded-lg"
             : "bottom-6 left-1/2 w-[20rem] sm:w-[40rem] h-[3rem] flex items-center justify-around rounded-[10px] translate-x-[-50%] opacity-100 scale-100"

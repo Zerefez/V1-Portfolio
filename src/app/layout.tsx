@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Space_Mono } from "next/font/google";
 import "./globals.css";
@@ -26,7 +27,14 @@ export default function RootLayout({
         className={`${spaceMono.variable} antialiased`}>
         
         <Header />
-        {children}
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
       </body>
     </html>
   );
