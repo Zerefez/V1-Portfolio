@@ -1,25 +1,31 @@
-
+"use client";
 
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
 export default function Hero() {
-  const firstText = useRef(null);
-  const secondText = useRef(null);
+  const firstText = useRef<HTMLParagraphElement | null>(null);
+  const secondText = useRef<HTMLParagraphElement | null>(null);
   const xPercent = useRef(0);
 
   useEffect(() => {
-    gsap.set(secondText.current, { left: secondText.current.getBoundingClientRect().width });
+    if (secondText.current) {
+      gsap.set(secondText.current, {
+        left: secondText.current.getBoundingClientRect().width,
+      });
+    }
 
     const animate = () => {
       if (xPercent.current <= -100) {
         xPercent.current = 0;
       }
-      if(xPercent.current > 0){
+      if (xPercent.current > 0) {
         xPercent.current = -100;
       }
-      gsap.set(firstText.current, { xPercent: xPercent.current });
-      gsap.set(secondText.current, { xPercent: xPercent.current });
+      if (firstText.current && secondText.current) {
+        gsap.set(firstText.current, { xPercent: xPercent.current });
+        gsap.set(secondText.current, { xPercent: xPercent.current });
+      }
       xPercent.current -= 0.1;
       requestAnimationFrame(animate);
     };
@@ -35,8 +41,12 @@ export default function Hero() {
         <div className="relative flex flex-row items-center justify-center w-full h-full">
           <div className="absolute top-[45%] transform -translate-y-1/2">
             <div className="relative whitespace-nowrap flex">
-              <p ref={firstText} className="text-white dark:text-white text-[230px] font-medium pr-[40px]">John Nguyen</p>
-              <p ref={secondText} className="absolute left-full top-0 text-white dark:text-white text-[230px] font-medium">John Nguyen</p>
+              <p ref={firstText} className="text-white dark:text-white text-[230px] font-medium pr-[40px]">
+                John Nguyen
+              </p>
+              <p ref={secondText} className="absolute left-full top-0 text-white dark:text-white text-[230px] font-medium">
+                John Nguyen
+              </p>
             </div>
           </div>
         </div>

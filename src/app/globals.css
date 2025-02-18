@@ -9,3 +9,20 @@ body {
   background: var(--background);
   font-family: 'Space Mono', monospace;
 }
+
+.hamburger--vortex .hamburger-box {
+  border-color: transparent; /* Remove any border color */
+}
+
+.hamburger--vortex .hamburger-inner {
+  background-color: white !important; /* Set the hamburger lines to white */
+}
+
+.hamburger--vortex.is-active .hamburger-inner {
+  background-color: white !important; /* Ensure active state lines are also white */
+}
+
+.hamburger--vortex .hamburger-inner::before,
+.hamburger--vortex .hamburger-inner::after {
+  background-color: white !important; /* Ensure all lines, including the before and after lines, are white */
+}
