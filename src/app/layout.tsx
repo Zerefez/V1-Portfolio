@@ -1,4 +1,3 @@
-import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Space_Mono } from "next/font/google";
@@ -22,11 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${spaceMono.variable} antialiased`}>
-        
-        <Header />
         <ThemeProvider
             attribute="class"
             defaultTheme="dark"

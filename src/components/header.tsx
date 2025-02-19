@@ -98,7 +98,7 @@ const NavigationLinks = ({
             key={link.hash}
           >
             <Link
-              className="flex w-full justify-center py-2 px-2 hover:text-neutral-950 transition"
+              className="flex w-full justify-center py-2 px-2 hover:text-neutral-950 transition uppercase"
               href={link.hash}
             >
               {link.name}
