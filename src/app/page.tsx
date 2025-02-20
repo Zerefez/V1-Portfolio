@@ -3,6 +3,7 @@
 import About from '@/components/about';
 import Header from '@/components/header';
 import Hero from '@/components/hero';
+import ProjectGallery from '@/components/projectGallery';
 import { useEffect } from 'react';
 
 export default function Home() {
@@ -24,7 +25,9 @@ export default function Home() {
       </div>
       <div className="relative z-10">
         <About />
+        <ProjectGallery />
       </div>
+      
       </main>
   );
 }

@@ -11,17 +11,17 @@ export default function About() {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start 0.9", "start 0.05"]
+    offset: ["start 0.8", "0.4 0.08"]
   });
 
   // Create an opacity transformation for the scroll progress
   const opacity = useTransform(scrollYProgress, [1, 1], [0, 1]);
   
   // Define the words of the paragraph
-  const words = "Software technology student at Aarhus University with a passion for building and optimizing digital systems. Always eager to learn, solve problems, and refine technology. A strong team player with a customer-focused mindset, bringing both technical skills and a practical, hands-on approach. Looking for real-world challenges to grow and make an impact.".split(" ");
+  const words = " A software technology student at Aarhus University with a passion for building and optimizing digital systems. Always eager to learn, solve problems, and refine technology. A strong team player with a customer-focused mindset, bringing both technical skills and a practical, hands-on approach. Looking for real-world challenges to grow and make an impact.".split(" ");
 
   return (
-    <section id="about" className="w-full h-screen">
+    <section id="about" className="w-full h-[80vh]">
       <div className="w-[80wh] h-[80vh] flex items-center justify-center rounded-[50px] overflow-hidden bg-neutral-950">
       <motion.div
         ref={container}
@@ -63,16 +63,16 @@ const Word: React.FC<WordProps> = ({ children, progress, range }) => {
       {/* Split word into characters and apply animation */}
       {children.split("").map((char: string, i: number) => { // Explicit types for `char` and `i`
         const start = range[0] + (i * step);
-        const end = range[0] + ((i + 1) * step);
+        const end = range[0] + ((i + 1) * step*1.3);
         return (
-          <Char key={`c_${i}`} progress={progress} range={[start, end]} char={char} />
+          <Char key={`c_${i}`} progress={progress} range={[start, end]} char={char} index={i} />
         );
       })}
     </span>
   );
 };
 
-const Char: React.FC<{char: string, progress: MotionValue<number>, range: [number, number]}> = ({ char, progress, range }) => {
+const Char: React.FC<{char: string, progress: MotionValue<number>, range: [number, number], index: number}> = ({ char, progress, range, index: i }) => {
   const opacity = useTransform(progress, range, [0, 1]);
 
   return (
@@ -82,6 +82,7 @@ const Char: React.FC<{char: string, progress: MotionValue<number>, range: [numbe
       {/* Animated character opacity */}
       <motion.span
       style={{ opacity }}
+      transition={{ duration: 0.5, delay: 0.2 + i * 0.1, ease: [0, 0.02, 0.01, 0.06, 0.02, 0.25, 0.56, 0.89,1 ],}}
       className="">
         {char}
       </motion.span>
