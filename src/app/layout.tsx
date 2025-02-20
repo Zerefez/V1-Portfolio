@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from "next";
 import { Space_Mono } from "next/font/google";
 import "./globals.css";
@@ -32,6 +33,7 @@ export default function RootLayout({
           >
             {children}
             <Analytics />
+            <SpeedInsights />
           </ThemeProvider>
       </body>
     </html>

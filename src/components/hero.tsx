@@ -51,6 +51,13 @@ export default function Hero() {
             </div>
           </div>
         </div>
+
+
+        <div className="absolute top-0 right-0 ">
+          <p>
+            <span className="text-white dark:text-white text-[20px] font-medium">John Nguyen</span>
+          </p>
+        </div>
       </div>
     </div>
     </section>
