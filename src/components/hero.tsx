@@ -34,7 +34,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="sticky w-full h-[100vh] overflow-hidden">
+    <section id="Home" className="w-full h-screen">
+    <div className="w-full h-[100vh] overflow-hidden">
       <div className="w-full h-full bg-optimum-grey dark:bg-optimum-grey dark:bg-grid-small-white/[0.4] bg-grid-small-black/[0.2] flex items-center justify-center relative">
         {/* Radial gradient for the container to give a faded look */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none bg-optimum-grey dark:bg-optimum-grey [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
@@ -52,5 +53,6 @@ export default function Hero() {
         </div>
       </div>
     </div>
+    </section>
   );
 }
