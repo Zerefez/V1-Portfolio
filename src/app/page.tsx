@@ -20,13 +20,16 @@ export default function Home() {
   return (
       <main className="mac-w-7xl w-full font-[family-name:var(--font-space-sans)] bg-optimum-grey">
         <Header />
-      <div className="sticky top-0 h-screen w-full">
+      <div className="sticky top-0">
         <Hero />
       </div>
-      <div className="relative z-10">
+      <div className="relative w-full z-10">
         <About />
+
         <ProjectGallery />
+        
       </div>
+      
       
       </main>
   );

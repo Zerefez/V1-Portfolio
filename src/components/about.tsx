@@ -18,7 +18,7 @@ export default function About() {
   const opacity = useTransform(scrollYProgress, [1, 1], [0, 1]);
   
   // Define the words of the paragraph
-  const words = " A software technology student at Aarhus University with a passion for building and optimizing digital systems. Always eager to learn, solve problems, and refine technology. A strong team player with a customer-focused mindset, bringing both technical skills and a practical, hands-on approach. Looking for real-world challenges to grow and make an impact.".split(" ");
+  const words = "A software technology student at Aarhus University with a passion for building and optimizing digital systems. Always eager to learn, solve problems, and refine technology. A strong team player with a customer-focused mindset, bringing both technical skills and a practical, hands-on approach. Looking for real-world challenges to grow and make an impact.".split(" ");
 
   return (
     <section id="about" className="w-full h-[80vh]">
@@ -82,7 +82,7 @@ const Char: React.FC<{char: string, progress: MotionValue<number>, range: [numbe
       {/* Animated character opacity */}
       <motion.span
       style={{ opacity }}
-      transition={{ duration: 0.5, delay: 0.2 + i * 0.1, ease: [0, 0.02, 0.01, 0.06, 0.02, 0.25, 0.56, 0.89,1 ],}}
+      transition={{ duration: 0.5, delay: 1.5 + i, ease: [0, 0.02, 0.01, 0.06, 0.02, 0.25, 0.56, 0.89,1 ],}}
       className="">
         {char}
       </motion.span>
