@@ -33,8 +33,11 @@ export default function Modal({ modal }: ModalProps) {
 
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true); // Ensure this code runs only on the client
+
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640);
     };
@@ -56,7 +59,7 @@ export default function Modal({ modal }: ModalProps) {
     };
   }, [isMobile]);
 
-  if (isMobile) return null; // Hide effects on mobile
+  if (!isClient || isMobile) return null; // Avoid SSR issues and hide on mobile
 
   return (
     <>
