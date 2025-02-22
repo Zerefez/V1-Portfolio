@@ -22,7 +22,7 @@ export default function About() {
 
   return (
     <section id="about" className="w-full h-[80vh]">
-      <div className="w-[80wh] h-[80vh] flex items-center justify-center rounded-[50px] overflow-hidden bg-neutral-950">
+      <div className="w-[80wh] h-[80vh] flex items-center justify-center rounded-[50px] overflow-hidden bg-[#40403F]">
       <motion.div
         ref={container}
         style={{ opacity }}

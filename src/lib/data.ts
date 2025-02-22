@@ -65,7 +65,7 @@ export interface ProjectType {
 
 export const projects: ProjectType[] = [
   {
-    title: "Submarine",
+    title: "Submarine system",
     src: "Project3.png",
     color: "#000000",
   },
