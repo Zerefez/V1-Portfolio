@@ -44,7 +44,7 @@ export default function Hero() {
                 className="flex shrink-0"
                 style={{ width: textWidth > 0 ? `${textWidth}px` : 'auto' }}
               >
-                <span className="text-white dark:text-white text-[150px] sm:text-[180px] md:text-[200px] lg:text-[230px] xl:text-[260px] font-medium mx-[80px] inline-block select-none whitespace-nowrap">
+                <span className="text-white dark:text-white text-[150px] sm:text-[180px] md:text-[200px] lg:text-[230px] xl:text-[260px] font-medium mx-[60px] inline-block select-none whitespace-nowrap futura-hero-text">
                   John Nguyen
                 </span>
               </div>
@@ -52,7 +52,16 @@ export default function Hero() {
                 className="flex shrink-0"
                 style={{ width: textWidth > 0 ? `${textWidth}px` : 'auto' }}
               >
-                <span className="text-white dark:text-white text-[150px] sm:text-[180px] md:text-[200px] lg:text-[230px] xl:text-[260px] font-medium mx-[80px] inline-block select-none whitespace-nowrap">
+                <span className="text-white dark:text-white text-[150px] sm:text-[180px] md:text-[200px] lg:text-[230px] xl:text-[260px] font-medium mx-[60px] inline-block select-none whitespace-nowrap futura-hero-text">
+                  John Nguyen
+                </span>
+              </div>
+
+              <div 
+                className="flex shrink-0"
+                style={{ width: textWidth > 0 ? `${textWidth}px` : 'auto' }}
+              >
+                <span className="text-white dark:text-white text-[150px] sm:text-[180px] md:text-[200px] lg:text-[230px] xl:text-[260px] font-medium mx-[60px] inline-block select-none whitespace-nowrap futura-hero-text">
                   John Nguyen
                 </span>
               </div>
@@ -63,7 +72,7 @@ export default function Hero() {
 
         <div className="absolute top-0 right-0 ">
           <p>
-            <span className="text-white dark:text-white text-[20px] font-medium">John Nguyen</span>
+            <span className="text-white dark:text-white text-[20px] font-medium futura-hero-text">John Nguyen</span>
           </p>
         </div>
       </div>

@@ -57,6 +57,92 @@ body {
   font-family: 'Space Mono', monospace;
 }
 
+/* Futura TS New Font Face Declarations */
+@font-face {
+  font-family: 'Futura TS';
+  src: url('/fonts/FuturaTSNewExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura TS';
+  src: url('/fonts/FuturaTSNewLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura TS';
+  src: url('/fonts/FuturaTSNew.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura TS';
+  src: url('/fonts/FuturaTSNewMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura TS';
+  src: url('/fonts/FuturaTSNewBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura TS';
+  src: url('/fonts/FuturaTSNewExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura TS';
+  src: url('/fonts/FuturaTSNewHeavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-outfit {
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.font-futura {
+  font-family: 'Futura TS', var(--font-outfit), 'Outfit', sans-serif;
+}
+
+.font-futura-light {
+  font-family: 'Futura TS', var(--font-outfit), 'Outfit', sans-serif;
+  font-weight: 300;
+}
+
+.font-futura-medium {
+  font-family: 'Futura TS', var(--font-outfit), 'Outfit', sans-serif;
+  font-weight: 500;
+}
+
+.font-futura-bold {
+  font-family: 'Futura TS', var(--font-outfit), 'Outfit', sans-serif;
+  font-weight: 700;
+}
+
+.futura-hero-text {
+  font-family: 'Futura TS', var(--font-outfit), 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+  word-spacing: -0.02em;
+}
+
 .hamburger--vortex .hamburger-box {
   border-color: transparent; /* Remove any border color */
 }
