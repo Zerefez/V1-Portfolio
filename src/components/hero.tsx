@@ -1,54 +1,62 @@
 "use client";
 
-import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
-  const firstText = useRef<HTMLParagraphElement | null>(null);
-  const secondText = useRef<HTMLParagraphElement | null>(null);
-  const xPercent = useRef(0);
+  const textRef = useRef<HTMLDivElement>(null);
+  const [textWidth, setTextWidth] = useState(0);
 
   useEffect(() => {
-    if (secondText.current) {
-      gsap.set(secondText.current, {
-        left: secondText.current.getBoundingClientRect().width,
-      });
+    if (textRef.current) {
+      const width = textRef.current.offsetWidth;
+      setTextWidth(width);
     }
-
-    const animate = () => {
-      if (xPercent.current <= -100) {
-        xPercent.current = 0;
-      }
-      if (xPercent.current > 0) {
-        xPercent.current = -100;
-      }
-      if (firstText.current && secondText.current) {
-        gsap.set(firstText.current, { xPercent: xPercent.current });
-        gsap.set(secondText.current, { xPercent: xPercent.current });
-      }
-      xPercent.current -= 0.1;
-      requestAnimationFrame(animate);
-    };
-
-    requestAnimationFrame(animate);
   }, []);
 
   return (
     <section id="Home" className="w-full h-screen">
-    <div className="w-full h-[100vh] overflow-hidden">
-      <div className="w-full h-full bg-optimum-grey dark:bg-optimum-grey dark:bg-grid-small-white/[0.4] bg-grid-small-black/[0.2] flex items-center justify-center relative">
+    <div className="w-full h-screen overflow-hidden">
+      <div className="w-full h-full bg-grid-small-black/[0.2] dark:bg-grid-small-white/[0.4] flex items-center justify-center relative">
         {/* Radial gradient for the container to give a faded look */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none bg-optimum-grey dark:bg-optimum-grey [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none bg-radial-fade" />
         <div className="relative flex flex-row items-center justify-center w-full h-full">
-          <div className="absolute top-[45%] transform -translate-y-1/2">
-            <div className="relative whitespace-nowrap flex">
-              <p ref={firstText} className="text-white dark:text-white text-[230px] font-medium pr-[40px]">
-                John Nguyen
-              </p>
-              <p ref={secondText} className="absolute left-full top-0 text-white dark:text-white text-[230px] font-medium">
-                John Nguyen
-              </p>
-            </div>
+          <div className="absolute top-[45%] transform -translate-y-1/2 w-full overflow-hidden">
+            <motion.div 
+              className="flex whitespace-nowrap will-change-transform"
+              animate={textWidth > 0 ? {
+                x: [0, -textWidth]
+              } : {}}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: textWidth > 0 ? Math.max(textWidth / 60, 8) : 8,
+                  ease: "linear"
+                }
+              }}
+              style={{
+                transform: textWidth === 0 ? 'translateX(0)' : undefined
+              }}
+            >
+              <div 
+                ref={textRef}
+                className="flex shrink-0"
+                style={{ width: textWidth > 0 ? `${textWidth}px` : 'auto' }}
+              >
+                <span className="text-white dark:text-white text-[150px] sm:text-[180px] md:text-[200px] lg:text-[230px] xl:text-[260px] font-medium mx-[80px] inline-block select-none whitespace-nowrap">
+                  John Nguyen
+                </span>
+              </div>
+              <div 
+                className="flex shrink-0"
+                style={{ width: textWidth > 0 ? `${textWidth}px` : 'auto' }}
+              >
+                <span className="text-white dark:text-white text-[150px] sm:text-[180px] md:text-[200px] lg:text-[230px] xl:text-[260px] font-medium mx-[80px] inline-block select-none whitespace-nowrap">
+                  John Nguyen
+                </span>
+              </div>
+            </motion.div>
           </div>
         </div>
 

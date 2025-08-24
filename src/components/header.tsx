@@ -32,7 +32,7 @@ const MobileMenu = ({
   toggleMenu: () => void;
 }) => (
   <button
-    className={`hamburger hamburger--vortex fixed bottom-6 right-6 z-[1000] scale-50 ${
+    className={`hamburger hamburger--vortex fixed bottom-6 right-6 z-1000 scale-50 ${
       isOpen ? "is-active" : "is-close"
     }`}
     type="button"
@@ -57,7 +57,7 @@ const NavigationLinks = ({
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed bottom-[80px] right-12 w-[100px] p-3 rounded-lg z-[999] bg-white/20 backdrop-blur-lg dark:bg-optimum-grey/10 origin-bottom"
+            className="fixed bottom-[80px] right-12 w-[100px] p-3 rounded-lg z-999 bg-white/20 backdrop-blur-lg dark:bg-optimum-grey/10 origin-bottom"
             initial="initial"
             animate="enter"
             exit="exit"
@@ -90,8 +90,8 @@ const NavigationLinks = ({
 
   // Desktop navbar
   return (
-    <div className="fixed bottom-6 left-1/2 w-[20rem] sm:w-[40rem] h-[3rem] flex items-center justify-around rounded-[10px] translate-x-[-50%] opacity-100 scale-100 z-[999] bg-white/20 backdrop-blur-lg dark:bg-optimum-grey/10">
-      <ul className="w-[22rem] flex justify-center gap-y-2 sm:flex-nowrap sm:gap-5">
+    <div className="fixed bottom-6 left-1/2 w-[20rem] sm:w-160 h-12 flex items-center justify-around rounded-[10px] translate-x-[-50%] opacity-100 scale-100 z-999 bg-white/20 backdrop-blur-lg dark:bg-optimum-grey/10">
+      <ul className="w-88 flex justify-center gap-y-2 sm:flex-nowrap sm:gap-5">
         {links.map((link) => (
           <li
             className="flex items-center justify-center relative"
@@ -131,7 +131,7 @@ export default function Header() {
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   return (
-    <header className="z-[999] relative font-[family-name:var(--font-space-mono)]">
+    <header className="z-999 relative font-(family-name:--font-space-mono)">
       <NavigationLinks isMobile={isMobile} isOpen={isOpen} />
       {isMobile && <MobileMenu isOpen={isOpen} toggleMenu={toggleMenu} />}
     </header>

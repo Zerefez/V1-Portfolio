@@ -13,7 +13,7 @@ export default function ProjectGallery() {
 
   return (
     <section id="projects" className="flex h-screen w-full">
-      <div className="flex h-[100vh] w-full flex-col items-center justify-center bg-optimum-grey">
+      <div className="flex h-screen w-full flex-col items-center justify-center bg-optimum-grey">
         <div className="flex items-center justify-start w-full h-[150px] md:m-20 md:p-10 sm:m-10 sm:p-5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
